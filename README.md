@@ -11,17 +11,35 @@ No século XX, o passatempo tornou-se popular entre os prisioneiros e soldados. 
 
 ### Como executar
 
+1º: é necessário iniciar o programa _BatalhaServidor.exe_. Ele irá questionar qual o IP que você irá se conectar (ex: 127.0.0.1). Após isso, o jogo será iniciado e o mesmo ficará aguardando um jogador se conectar.
 
+2º: é necessário iniciar o programa _BatalhaCliente.exe_. Ele irá questionar qual o IP do servidor que você irá se conectar (ex: 127.0.0.1). Após isso, o jogo será iniciado e o programa _BatalhaServidor.exe_ reconhecerá que entrou um jogador na _sala_ para competir.
 
-Baixe os executáveis: batalhaCliente
+### Sobre o código
 
-### Dados do Socket - Código Servidor
+O código foi escrito em C utilizando as bibliotecas abaixo:
 
-- Protocolo: UDP
-- Porta: 2000
-- IP: 198.168.0.10
+include <stdio.h>
+include <stdlib.h>
+include <string.h>
+include <errno.h>
+include <arpa/inet.h>
+include <sys/socket.h>
+include <sys/types.h>
+include <netinet/in.h>
 
-### Os métodos
+#### Dados do socket
+
+O socket foi criado a partir de um struct em C com os seguintes atributos/dados:
+
+   remoto.sin_family: AF_NET                        -> é a família do IP a ser conectado (AF_NET refere-se ao IPv4 no caso).
+   remoto.sin_port      = htons(PORTA);             -> é a porta de comunicação que o cliente se comunicará com o server (2000 no caso).
+   remoto.sin_addr.s_addr      = inet_addr(ip);     -> é o IP do servidor propriamente dito (que o usuário digitará).
+
+#### Métodos
+
+Foram utilizados os seguintes métodos
+
 
 ## buildBoard()
 
