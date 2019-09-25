@@ -32,9 +32,9 @@ include <netinet/in.h>
 
 O socket foi criado a partir de um struct em C com os seguintes atributos/dados:
 
-   remoto.sin_family: AF_NET                        -> é a família do IP a ser conectado (AF_NET refere-se ao IPv4 no caso).
-   remoto.sin_port      = htons(PORTA);             -> é a porta de comunicação que o cliente se comunicará com o server (2000 no caso).
-   remoto.sin_addr.s_addr      = inet_addr(ip);     -> é o IP do servidor propriamente dito (que o usuário digitará).
+   -remoto.sin_family: AF_NET                        -> é a família do IP a ser conectado (AF_NET refere-se ao IPv4 no caso).
+   -remoto.sin_port      = htons(PORTA);             -> é a porta de comunicação que o cliente se comunicará com o server (2000 no caso).
+   -remoto.sin_addr.s_addr      = inet_addr(ip);     -> é o IP do servidor propriamente dito (que o usuário digitará).
 
 #### Métodos
 
