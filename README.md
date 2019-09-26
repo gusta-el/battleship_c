@@ -11,9 +11,13 @@ No século XX, o passatempo tornou-se popular entre os prisioneiros e soldados. 
 
 ### Como executar
 
-1º: é necessário iniciar o programa _BatalhaServidor.exe_. Ele irá questionar qual o IP que você irá se conectar (ex: 127.0.0.1). Após isso, o jogo será iniciado e o mesmo ficará aguardando um jogador se conectar.
+1º: é necessário iniciar o programa _BatalhaServidor.exe_. Ele irá questionar qual o IP que você irá se conectar (ex: 127.0.0.1). Após isso, o jogo será iniciado e o mesmo ficará aguardando um jogador se conectar conforme imagem abaixo:
 
-2º: é necessário iniciar o programa _BatalhaCliente.exe_. Ele irá questionar qual o IP do servidor que você irá se conectar (ex: 127.0.0.1). Após isso, o jogo será iniciado e o programa _BatalhaServidor.exe_ reconhecerá que entrou um jogador na _sala_ para competir.
+![image](https://user-images.githubusercontent.com/42786056/65648557-1b464c80-dfd9-11e9-9877-f4f570c89741.png)
+
+2º: é necessário iniciar o programa _BatalhaCliente.exe_. Ele irá questionar qual o IP do servidor que você irá se conectar (ex: 127.0.0.1). Após isso, o jogo será iniciado e o programa _BatalhaServidor.exe_ reconhecerá que entrou um jogador na _sala_ para competir:
+
+![image](https://user-images.githubusercontent.com/42786056/65648634-75471200-dfd9-11e9-8947-d0cee90ce2f4.png)
 
 ### Sobre o código
 
@@ -49,6 +53,8 @@ Este método não possui retorno. Ele irá mapear os valores números presentes 
 
 Além disso, ele desenha os eixos alfanúmericos para que o usuário visualize as coordenadas.
 
+![image](https://user-images.githubusercontent.com/42786056/65648505-dfab8280-dfd8-11e9-91ac-1f045658f75a.png)
+
 ##### void cleanBoard(int x[10][10])
 Este método não possui retorno. Ele irá criar/inicializar o tabuleiro (vazio, sem posições de navios). Após isso, o jogador que irá escolher as posições que deseja alocar seus navios.
 
@@ -77,8 +83,6 @@ Este método possui retorno. Ele irá verificar se determinada coordenada repres
 Este método possui retorno. Ele é a primeira parte gráfica do jogo contemplando a seguinte Asci arte:
 
 ![batalha](https://user-images.githubusercontent.com/42786056/65648393-79befb00-dfd8-11e9-9d6c-7dc961c6b970.png)
-
-
 
 
 
