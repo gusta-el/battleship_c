@@ -38,17 +38,75 @@ O socket foi criado a partir de um struct em C com os seguintes atributos/dados:
 
 #### Métodos
 
-Foram utilizados os seguintes métodos
+Foram utilizados os seguintes métodos:
 
+##### void buildBoard(int x[10][10])
+Este método não possui retorno. Ele irá mapear os valores números presentes na matriz e irá converter na arte ASCII.
 
-## buildBoard()
-
-Este método constrói o mapa, assumindo os seguintes valores:
 - //0 o Mira
 - //1 ~ Água
 - //2 # Barco
 
-## bomb()
-Este método verifica se as cordenadas escolhidas no parâmetro são Água ou Barco.
+Além disso, ele desenha os eixos alfanúmericos para que o usuário visualize as coordenadas.
+
+##### void cleanBoard(int x[10][10])
+Este método não possui retorno. Ele irá criar/inicializar o tabuleiro (vazio, sem posições de navios). Após isso, o jogador que irá escolher as posições que deseja alocar seus navios.
+
+##### int score(int x[10][10])
+Este método realiza a pontuação atual de determinado jogo para verificar todos os navios já foram derrotados.
+
+##### int findAbscissa(char abscissa)
+Este método recupera o valor da coordenada 'letra' (ABCDEFGHIJ) e converte ela no índice correspondente da matriz no mapa.
+
+##### void build(int type, int campo[10][10], char coordenadas[2])
+Este método não possui retorno. Ele irá gravar no mapa de acordo com as coordenadas algum valor (0 para água ou 1 para barco).
+
+##### void buildOthersShips(int shipType, int xY, int campo[10][10], char coordenadas[2])
+Este método não possui retorno. Ele irá gravar os demais navios (exceto o submarino).
+Os parametros são:
+- shipType: o tamanho do navio;
+- int xY: a posição que o jogador gostaria que ele estivesse (vertical ou horizontal).
+- campo: o mapa do jogador
+
+##### int bomb(int campo[10][10], char coordenadas[2])
+Este método possui retorno. Ele irá verificar se determinada coordenada representa um navio.
+0 - para água.
+1 - caso seja bomba, ou seja, a coordenada corresponde ao barco.
+
+##### void drawBattleShip()
+Este método possui retorno. Ele é a primeira parte gráfica do jogo contemplando a seguinte Asci arte:
+
+______         _    _    _             _      _
+| ___ \       | |  | |  | |           | |    (_)
+| |_/ /  __ _ | |_ | |_ | |  ___  ___ | |__   _  _ __
+| ___ \ / _` || __|| __|| | / _ \/ __|| '_ \ | || '_
+| |_/ /| (_| || |_ | |_ | ||  __/\__ \| | | || || |_) |
+\____/  \__,_| \__| \__||_| \___||___/|_| |_||_|| .__/
+                                                | |
+                                                |_|
+=======================================================
+======================================^================
+====================================='  '   ===========
+=====================================          ========
+======================|\============          =========
+======================| \============         =========
+======================|  \=============================
+======================|   \============================
+===================== |____\===========================
+==============________|_________=======================
+~ ~ ~ ~ ~ ~ ~\                 /~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+ ~ ~ ~ ~ ~ ~ ~\               /~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+~ ~ ~ ~ ~ ~ ~ ~\_____________/~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
+
+
+
+
+
+
+
+
+
 
 
