@@ -163,6 +163,9 @@ struct sockaddr_in remoto;
 
 int main ()
 {
+	char ip[50];
+	printf("Digite o IP do Servidor: ");
+    scanf("%s",ip);
 
 drawBattleShip();
 
@@ -173,13 +176,14 @@ drawBattleShip();
 	int bomba = 0;
 	
 	char coordenadas[2];
-	char auxCoordenadas[2];
+	
 	int gameOver = 0;
-	char xY[2];
+	int xY;
 	int shipType = 1;
 	int water = 0;
 	int ship = 2;
 	int position;
+
 
 //==========================CONFIGURACOES===========================//
 //==========================CONFIGURACOES===========================//
@@ -204,7 +208,7 @@ drawBattleShip();
 
     local.sin_family    = AF_INET;
     local.sin_port      = htons(PORTA);
-    //local.sin_addr.s_addr      = inet_addr("192.168.0.10");
+    local.sin_addr.s_addr      = inet_addr(ip);
     memset(local.sin_zero, 0x0, 8);
     bind(sockfd, (struct sockaddr*) &local, sizeof(local));
     listen(sockfd, 1);
@@ -229,9 +233,41 @@ drawBattleShip();
 	printf("============POSICIONE 4 SUBMARINOS NO MAPA=============\n");
 	for(int i = 1; i < 5; i++){
 		printf("Escolha a posição do seu %dº submarino: ", i);
-		gets(coordenadas);
+		scanf("%s",coordenadas);
 		build(ship,myBoard, coordenadas);
 	}
+
+	//3 Cruzadores
+	shipType = 2;
+	printf("============POSICIONE 3 CRUZADORES NO MAPA=============\n");
+	for(int i = 1; i < 4; i++){
+		printf("Escolha a posição do seu %dº cruzadores: ", i);
+		scanf("%s",coordenadas);
+		printf("Escolha a posição vertical (1) ou horizontal (2) do seu %dº cruzadores: ", i);
+		scanf("%d",&xY);
+		buildOthersShips(shipType,xY,myBoard, coordenadas);
+	}
+
+	//2 Encouraçados
+	shipType = 3;
+	printf("============POSICIONE 2 ENCOURAÇADOS NO MAPA=============\n");
+	for(int i = 1; i < 3; i++){
+		printf("Escolha a posição do seu %dº encouraçados: ", i);
+		scanf("%s",coordenadas);
+		printf("Escolha a posição vertical (1) ou horizontal (2) do seu %dº encouraçados: ", i);
+		scanf("%d",&xY);
+		buildOthersShips(shipType,xY,myBoard, coordenadas);
+	}
+
+	//1 Porta Avião
+	shipType = 4;
+	printf("============POSICIONE O PORTA AVIÕES NO MAPA=============\n");
+		printf("Escolha a posição do seu %dº porta-aviões: ", i);
+		scanf("%s",coordenadas);
+		printf("Escolha a posição vertical (1) ou horizontal (2) do seu %dº porta-aviões: ", i);
+		scanf("%d",&xY);
+		buildOthersShips(shipType,xY,myBoard, coordenadas);
+	
 	
 	printf("==================SUA ESTRATÉGIA=======================\n");
 	buildBoard(myBoard);
