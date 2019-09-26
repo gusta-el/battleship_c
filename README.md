@@ -19,6 +19,10 @@ No século XX, o passatempo tornou-se popular entre os prisioneiros e soldados. 
 
 ![image](https://user-images.githubusercontent.com/42786056/65648634-75471200-dfd9-11e9-8947-d0cee90ce2f4.png)
 
+
+![image](https://user-images.githubusercontent.com/42786056/65649462-02d83100-dfdd-11e9-8a1f-670c51c30097.png)
+
+
 ### Sobre o código
 
 O código foi escrito em C utilizando as bibliotecas abaixo:
@@ -54,6 +58,8 @@ Este método não possui retorno. Ele irá mapear os valores números presentes 
 Além disso, ele desenha os eixos alfanúmericos para que o usuário visualize as coordenadas.
 
 ![image](https://user-images.githubusercontent.com/42786056/65648505-dfab8280-dfd8-11e9-91ac-1f045658f75a.png)
+
+![image](https://user-images.githubusercontent.com/42786056/65649316-7299ec00-dfdc-11e9-9d2d-f03b027ed727.png)
 
 ##### void cleanBoard(int x[10][10])
 Este método não possui retorno. Ele irá criar/inicializar o tabuleiro (vazio, sem posições de navios). Após isso, o jogador que irá escolher as posições que deseja alocar seus navios.
